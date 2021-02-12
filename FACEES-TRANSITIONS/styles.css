@@ -1,0 +1,88 @@
+
+body {
+    background-color: #555;
+    position: relative;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    grid-gap: 1rem;
+}
+
+
+.card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+button {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #000;
+    color: white;
+    padding: .5rem 1rem;
+}
+
+button:hover {
+    background-color: hotpink;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.modal-outer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    padding: 2rem;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    /* turn off the cursor for this element */
+    pointer-events: none;
+
+    transition: opacity 0.3s;
+
+}
+
+.modal-outer.active {
+    opacity: 100%;
+
+    pointer-events: all;
+}
+
+.modal-inner {
+    background-color:white;
+    color: black;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    max-width: 600px;
+    transform: translateY(-200%);
+    transition: transform .5s;
+}
+
+.modal-outer.active .modal-inner {
+    transform: translateY(0);
+}
+
+.modal-inner img {
+    
+    max-height: 70vh;
+    
+    max-width: auto;
+
+    object-fit: cover;
+    object-position: center;
+}
